@@ -26,3 +26,247 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* --- SKEUOMORPHIC STYLING SYSTEM --- */
+
+/* Subtle Linen Fabric Texture */
+.bg-linen {
+  background-color: #f7f4ec;
+  background-image: 
+    linear-gradient(90deg, rgba(180, 170, 150, 0.08) 50%, transparent 50%),
+    linear-gradient(rgba(180, 170, 150, 0.08) 50%, transparent 50%);
+  background-size: 6px 6px;
+  position: relative;
+}
+
+.bg-linen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.03) 100%);
+  pointer-events: none;
+}
+
+/* Rich Dark Leather Wall Panel Texture */
+.bg-leather-dark {
+  background-color: #21120c;
+  background-image: 
+    radial-gradient(rgba(255,255,255,0.02) 1px, transparent 0),
+    radial-gradient(rgba(0,0,0,0.4) 1px, transparent 0);
+  background-size: 8px 8px;
+  background-position: 0 0, 4px 4px;
+  position: relative;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.6);
+}
+
+.bg-leather-dark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent 40%, transparent 60%, rgba(0,0,0,0.4) 100%);
+  pointer-events: none;
+}
+
+/* Elegant Aged Parchment Paper Card */
+.bg-parchment {
+  background-color: #faf5e6;
+  background-image: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.4) 0%, transparent 80%);
+  box-shadow: 
+    inset 0 0 40px rgba(175, 150, 110, 0.15),
+    0 1px 1px rgba(0,0,0,0.1),
+    0 8px 24px rgba(40,30,15,0.12),
+    0 20px 40px rgba(40,30,15,0.06);
+  border: 1px solid rgba(190, 175, 145, 0.4);
+  position: relative;
+}
+
+/* Polished Mahogany Wood Panel */
+.bg-mahogany {
+  background: linear-gradient(135deg, #3d1b11 0%, #291008 100%);
+  border: 1px solid #1a0a05;
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* Polished Gold/Brass Plates & Metallic Details */
+.bg-gold-metallic {
+  background: linear-gradient(135deg, 
+    #bfa054 0%, 
+    #dfca8c 25%, 
+    #b3913b 50%, 
+    #f2e5bc 75%, 
+    #a68026 100%
+  );
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    inset 0 -1px 0 rgba(0,0,0,0.3),
+    0 4px 10px rgba(0,0,0,0.15),
+    0 1px 3px rgba(0,0,0,0.1);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+}
+
+/* Realistic Gold Bevel Frame for Cards & Images */
+.frame-gold {
+  border: 8px solid #c5a85c;
+  border-image: linear-gradient(to right, #967429, #dfca8c, #c5a85c, #f7e6b7, #80611d) 1;
+  box-shadow: 
+    inset 0 0 0 1px rgba(0,0,0,0.2),
+    inset 0 0 8px rgba(0,0,0,0.3),
+    0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Beveled Wooden Picture Frame */
+.frame-wood {
+  outline: 4px solid #1e0b04;
+  border: 12px solid #4a2312;
+  border-image: linear-gradient(135deg, #5c2d18 0%, #30140a 100%) 1;
+  box-shadow: 
+    inset 0 0 12px rgba(0,0,0,0.6),
+    0 15px 35px rgba(0,0,0,0.35);
+}
+
+/* Double gold/ivory stitches */
+.border-stitch-gold {
+  border: 1px dashed rgba(212, 175, 55, 0.45);
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.02), inset 0 0 0 1px rgba(0,0,0,0.05);
+}
+
+.border-stitch-ivory {
+  border: 1px dashed rgba(250, 248, 244, 0.3);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.02), inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+/* Letterpress & Engraved Text Effects */
+.text-letterpress-dark {
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.7);
+}
+
+.text-letterpress-light {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.8);
+}
+
+.text-engraved-gold {
+  color: #bf9f4d;
+  background-image: linear-gradient(135deg, #a68532 0%, #d9c585 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 1px 0px rgba(255,255,255,0.25));
+}
+
+/* Specular Glass Shelf Navigation Bar */
+.glass-shelf {
+  background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.05) 50%, rgba(240,240,240,0.15) 100%);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid #bda25c;
+  box-shadow: 
+    0 1px 0px rgba(255,255,255,0.3),
+    0 8px 24px rgba(0,0,0,0.1),
+    inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+/* Tactile 3D Buttons */
+.btn-tactile-light {
+  background: linear-gradient(to bottom, #ffffff 0%, #e8e4db 100%);
+  border: 1px solid #d1cbbe;
+  color: #3d3a33;
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.8),
+    0 1px 1px rgba(0,0,0,0.08),
+    0 4px 6px rgba(110,105,95,0.15),
+    0 8px 16px rgba(110,105,95,0.08);
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.btn-tactile-light:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(to bottom, #ffffff 0%, #ededed 100%);
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.8),
+    0 2px 2px rgba(0,0,0,0.1),
+    0 6px 12px rgba(110,105,95,0.2),
+    0 12px 24px rgba(110,105,95,0.12);
+}
+
+.btn-tactile-light:active {
+  transform: translateY(1px);
+  background: linear-gradient(to bottom, #e2ded5 0%, #ece9e0 100%);
+  box-shadow: 
+    inset 0 2px 5px rgba(0,0,0,0.12),
+    inset 0 1px 2px rgba(0,0,0,0.08),
+    0 1px 1px rgba(0,0,0,0.05);
+}
+
+.btn-tactile-gold {
+  background: linear-gradient(to bottom, #dfca8c 0%, #b3913b 100%);
+  border: 1px solid #94762a;
+  color: #261f0c;
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    0 1px 1px rgba(0,0,0,0.1),
+    0 4px 6px rgba(60,50,20,0.2),
+    0 8px 16px rgba(60,50,20,0.1);
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+}
+
+.btn-tactile-gold:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(to bottom, #eddcb0 0%, #c4a148 100%);
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    0 2px 2px rgba(0,0,0,0.12),
+    0 6px 12px rgba(60,50,20,0.25),
+    0 12px 24px rgba(60,50,20,0.15);
+}
+
+.btn-tactile-gold:active {
+  transform: translateY(1px);
+  background: linear-gradient(to bottom, #a38232 0%, #bd9c42 100%);
+  box-shadow: 
+    inset 0 2px 5px rgba(0,0,0,0.25),
+    inset 0 1px 2px rgba(0,0,0,0.15),
+    0 1px 1px rgba(0,0,0,0.05);
+}
+
+.btn-tactile-dark {
+  background: linear-gradient(to bottom, #2b1f1a 0%, #150f0c 100%);
+  border: 1px solid #000000;
+  color: #ebdcd5;
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 1px 1px rgba(0,0,0,0.2),
+    0 4px 6px rgba(0,0,0,0.3),
+    0 8px 16px rgba(0,0,0,0.2);
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.6);
+}
+
+.btn-tactile-dark:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(to bottom, #3b2c25 0%, #1e1612 100%);
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    0 2px 2px rgba(0,0,0,0.25),
+    0 6px 12px rgba(0,0,0,0.35),
+    0 12px 24px rgba(0,0,0,0.25);
+}
+
+.btn-tactile-dark:active {
+  transform: translateY(1px);
+  background: linear-gradient(to bottom, #0f0b09 0%, #17110e 100%);
+  box-shadow: 
+    inset 0 2px 5px rgba(0,0,0,0.4),
+    inset 0 1px 2px rgba(0,0,0,0.2),
+    0 1px 1px rgba(0,0,0,0.05);
+}
+
+/* Stitching Divider line */
+.divider-stitch {
+  height: 0;
+  border-top: 1px dashed rgba(180, 170, 150, 0.4);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
