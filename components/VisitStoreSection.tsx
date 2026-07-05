@@ -4,10 +4,10 @@ export default function VisitStoreSection() {
   return (
     <section id="visit-us" className="py-24 bg-mahogany text-brand-black w-full relative overflow-hidden shadow-[inset_0_10px_30px_rgba(0,0,0,0.8),0_15px_30px_rgba(0,0,0,0.4)]">
       {/* Decorative brass corner brackets or screws */}
-      <div className="absolute top-6 left-6 w-5 h-5 border-t-2 border-l-2 border-brand-gold/40"></div>
-      <div className="absolute top-6 right-6 w-5 h-5 border-t-2 border-r-2 border-brand-gold/40"></div>
-      <div className="absolute bottom-6 left-6 w-5 h-5 border-b-2 border-l-2 border-brand-gold/40"></div>
-      <div className="absolute bottom-6 right-6 w-5 h-5 border-b-2 border-r-2 border-brand-gold/40"></div>
+      <div className="absolute top-6 left-6 w-5 h-5 border-t-2 border-l-2 border-brand-rosegold/40"></div>
+      <div className="absolute top-6 right-6 w-5 h-5 border-t-2 border-r-2 border-brand-rosegold/40"></div>
+      <div className="absolute bottom-6 left-6 w-5 h-5 border-b-2 border-l-2 border-brand-rosegold/40"></div>
+      <div className="absolute bottom-6 right-6 w-5 h-5 border-b-2 border-r-2 border-brand-rosegold/40"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 items-stretch">
@@ -27,9 +27,9 @@ export default function VisitStoreSection() {
                 
                 <div className="space-y-6 font-sans">
                   <div>
-                    <h3 className="uppercase tracking-widest text-xs text-brand-gold font-bold mb-1">Location</h3>
+                    <h3 className="uppercase tracking-widest text-xs text-brand-rosegold font-bold mb-1">Location</h3>
                     <p className="font-light text-brand-black/90 leading-relaxed text-sm">
-                      Dreamz Fashion Boutique<br/>
+                      The Label by Mayilini<br/>
                       162, Nehru Street,<br/>
                       Near Singapur Silai, Pondicherry Bazaar,<br/>
                       Puducherry 605001<br/>
@@ -38,7 +38,7 @@ export default function VisitStoreSection() {
                   </div>
                   
                   <div>
-                    <h3 className="uppercase tracking-widest text-xs text-brand-gold font-bold mb-1">Hours</h3>
+                    <h3 className="uppercase tracking-widest text-xs text-brand-rosegold font-bold mb-1">Hours</h3>
                     <p className="font-light text-brand-black/90 leading-relaxed text-sm">
                       Monday - Saturday: 10:00 AM - 8:30 PM<br/>
                       Sunday: 11:00 AM - 6:00 PM
@@ -46,10 +46,10 @@ export default function VisitStoreSection() {
                   </div>
                   
                   <div>
-                    <h3 className="uppercase tracking-widest text-xs text-brand-gold font-bold mb-1">Contact</h3>
+                    <h3 className="uppercase tracking-widest text-xs text-brand-rosegold font-bold mb-1">Contact</h3>
                     <p className="font-light text-brand-black/90 leading-relaxed text-sm">
-                      +91 12345 67890<br/>
-                      hello@dreamzboutique.com
+                      +91 96779 86327<br/>
+                      hello@mayilini.com
                     </p>
                   </div>
                 </div>
@@ -57,10 +57,10 @@ export default function VisitStoreSection() {
               
               <div className="pt-6 pl-6">
                 <a 
-                  href="http://google.com/maps/place/Dreamz/@11.936129,79.828438,19.7z/data=!4m6!3m5!1s0x3a53617fcd856aa1:0x99ee69d78abf3380!8m2!3d11.9362388!4d79.8289203!16s%2Fg%2F11c74fv04j?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D" 
+                  href="https://maps.app.goo.gl/aRN3wjLbz3kokx5T7" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="btn-tactile-gold px-8 py-3.5 rounded-lg uppercase tracking-widest text-xs font-bold inline-block text-center w-full shadow-md"
+                  className="btn-tactile-rosegold px-8 py-3.5 rounded-lg uppercase tracking-widest text-xs font-bold inline-block text-center w-full shadow-md"
                 >
                   Get Directions
                 </a>
@@ -72,7 +72,7 @@ export default function VisitStoreSection() {
           <div className="w-full lg:w-2/3 h-96 lg:h-auto min-h-[400px] p-2 bg-[#1c0f0a] frame-gold shadow-2xl relative overflow-hidden transition-transform duration-500 hover:scale-[1.01]">
             <div className="absolute inset-2 shadow-[inset_0_4px_10px_rgba(0,0,0,0.6)] pointer-events-none z-10"></div>
             <iframe 
-              src="https://maps.google.com/maps?q=11.9362388,79.8289203&t=&z=17&ie=UTF8&iwloc=&output=embed" 
+              src="https://maps.google.com/maps?q=Dreamz,+Puducherry&t=&z=17&ie=UTF8&iwloc=&output=embed" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 

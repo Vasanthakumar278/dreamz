@@ -69,7 +69,7 @@ export default function CollectionsSection() {
                     {item.description}
                   </p>
                   <a 
-                    href={`https://wa.me/1234567890?text=Hello%20Dreamz%20Boutique,%20I%20would%20like%20more%20information%20about%20the%20${encodeURIComponent(item.title)}%20collection.`}
+                    href={`https://wa.me/9677986327?text=Hello%20Mayilini%20Boutique,%20I%20would%20like%20more%20information%20about%20the%20${encodeURIComponent(item.title)}%20collection.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-tactile-gold px-6 py-3.5 rounded-lg text-xs uppercase tracking-widest font-bold inline-flex items-center space-x-3"

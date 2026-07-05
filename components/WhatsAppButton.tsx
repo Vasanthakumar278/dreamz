@@ -1,7 +1,7 @@
 export default function WhatsAppButton() {
   return (
     <a 
-      href="https://wa.me/1234567890?text=Hello%20Dreamz%20Boutique,%20I%20would%20like%20more%20information." 
+      href="https://wa.me/9677986327?text=Hello%20Mayilini%20Boutique,%20I%20would%20like%20more%20information." 
       target="_blank" 
       rel="noopener noreferrer"
       className="fixed bottom-8 right-8 z-50 p-4 bg-gradient-to-b from-[#1ebd5d] to-[#0f8c41] text-[#dfca8c] rounded-full border-2 border-[#dfca8c] shadow-[0_8px_20px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.4)] hover:scale-110 hover:-translate-y-1 active:translate-y-0.5 active:scale-95 transition-all duration-300 flex items-center justify-center group"

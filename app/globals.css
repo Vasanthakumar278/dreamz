@@ -6,6 +6,9 @@
   --color-brand-gold: #D4AF37;
   --color-brand-beige: #F5F5DC;
   --color-brand-grey: #8B8C89;
+  --color-brand-rosegold: #C67D82;
+  --color-brand-rosegold-light: #E0A6AA;
+  --color-brand-rosegold-dark: #A35A60;
 
   --font-serif: var(--font-playfair), "Georgia", serif;
   --font-sans: var(--font-inter), "Helvetica Neue", sans-serif;
@@ -106,6 +109,22 @@ html {
   text-shadow: 0 1px 0 rgba(255,255,255,0.4);
 }
 
+.bg-rosegold-metallic {
+  background: linear-gradient(135deg, 
+    var(--color-brand-rosegold) 0%, 
+    var(--color-brand-rosegold-light) 25%, 
+    var(--color-brand-rosegold-dark) 50%, 
+    #f3d7da 75%, 
+    var(--color-brand-rosegold) 100%
+  );
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    inset 0 -1px 0 rgba(0,0,0,0.3),
+    0 4px 10px rgba(0,0,0,0.15),
+    0 1px 3px rgba(0,0,0,0.1);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+}
+
 /* Realistic Gold Bevel Frame for Cards & Images */
 .frame-gold {
   border: 8px solid #c5a85c;
@@ -149,6 +168,14 @@ html {
 .text-engraved-gold {
   color: #bf9f4d;
   background-image: linear-gradient(135deg, #a68532 0%, #d9c585 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 1px 0px rgba(255,255,255,0.25));
+}
+
+.text-engraved-rosegold {
+  color: var(--color-brand-rosegold);
+  background-image: linear-gradient(135deg, var(--color-brand-rosegold-dark) 0%, var(--color-brand-rosegold-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0px 1px 0px rgba(255,255,255,0.25));
@@ -225,6 +252,38 @@ html {
 .btn-tactile-gold:active {
   transform: translateY(1px);
   background: linear-gradient(to bottom, #a38232 0%, #bd9c42 100%);
+  box-shadow: 
+    inset 0 2px 5px rgba(0,0,0,0.25),
+    inset 0 1px 2px rgba(0,0,0,0.15),
+    0 1px 1px rgba(0,0,0,0.05);
+}
+
+.btn-tactile-rosegold {
+  background: linear-gradient(to bottom, var(--color-brand-rosegold-light) 0%, var(--color-brand-rosegold) 100%);
+  border: 1px solid var(--color-brand-rosegold-dark);
+  color: #FAF8F4;
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    0 1px 1px rgba(0,0,0,0.1),
+    0 4px 6px rgba(163,90,96,0.2),
+    0 8px 16px rgba(163,90,96,0.1);
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+
+.btn-tactile-rosegold:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(to bottom, #ebbcbf 0%, var(--color-brand-rosegold-light) 100%);
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    0 2px 2px rgba(0,0,0,0.12),
+    0 6px 12px rgba(163,90,96,0.25),
+    0 12px 24px rgba(163,90,96,0.15);
+}
+
+.btn-tactile-rosegold:active {
+  transform: translateY(1px);
+  background: linear-gradient(to bottom, var(--color-brand-rosegold) 0%, var(--color-brand-rosegold-dark) 100%);
   box-shadow: 
     inset 0 2px 5px rgba(0,0,0,0.25),
     inset 0 1px 2px rgba(0,0,0,0.15),

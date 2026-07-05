@@ -1,0 +1,399 @@
+[
+  {
+    "id": "prod_kurti_1",
+    "title": "Embroidered Cotton Kurti",
+    "price": 1499,
+    "description": "A beautiful everyday cotton kurti with delicate hand embroidery around the neckline.",
+    "image": "/images/cat_kurti.png",
+    "colors": [
+      "Yellow",
+      "Pink",
+      "White"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "category": "Kurti"
+  },
+  {
+    "id": "prod_kurti_2",
+    "title": "Silk Blend Party Kurti",
+    "price": 2499,
+    "description": "Elegant silk blend kurti perfect for festive occasions and evening gatherings.",
+    "image": "/images/cat_kurti.png",
+    "colors": [
+      "Maroon",
+      "Emerald",
+      "Navy Blue"
+    ],
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "category": "Kurti"
+  },
+  {
+    "id": "prod_2piece_1",
+    "title": "Linen Co-ord Set",
+    "price": 2999,
+    "description": "A comfortable and stylish 2 piece linen co-ord set featuring a tunic and straight pants.",
+    "image": "/images/cat_2piece.png",
+    "colors": [
+      "Beige",
+      "Olive",
+      "Rust"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "category": "2 Piece Set"
+  },
+  {
+    "id": "prod_2piece_2",
+    "title": "Printed Top & Palazzo",
+    "price": 2299,
+    "description": "Vibrant printed top paired with matching wide-leg palazzos for a breezy summer look.",
+    "image": "/images/cat_2piece.png",
+    "colors": [
+      "Blue",
+      "Peach",
+      "White"
+    ],
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "category": "2 Piece Set"
+  },
+  {
+    "id": "prod_3piece_1",
+    "title": "Festive Suit Set with Dupatta",
+    "price": 4599,
+    "description": "A complete 3 piece set including a heavy embroidered kurti, pants, and a matching organza dupatta.",
+    "image": "/images/cat_3piece.png",
+    "colors": [
+      "Rosegold",
+      "Crimson Red",
+      "Gold"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "category": "3 Piece Set"
+  },
+  {
+    "id": "prod_3piece_2",
+    "title": "Cotton Daily Wear 3 Piece",
+    "price": 2899,
+    "description": "Comfortable pure cotton suit set featuring a printed kurti, solid pants, and a chiffon dupatta.",
+    "image": "/images/cat_3piece.png",
+    "colors": [
+      "Mint Green",
+      "Lavender",
+      "Yellow"
+    ],
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "category": "3 Piece Set"
+  },
+  {
+    "id": "prod_jeans_1",
+    "title": "High-Waist Mom Jeans",
+    "price": 1899,
+    "description": "Classic high-waisted mom jeans offering a relaxed fit and retro styling.",
+    "image": "/images/cat_jeans.png",
+    "colors": [
+      "Light Blue",
+      "Dark Blue",
+      "Black"
+    ],
+    "sizes": [
+      "28",
+      "30",
+      "32",
+      "34"
+    ],
+    "category": "Jeans"
+  },
+  {
+    "id": "prod_jeans_2",
+    "title": "Skinny Stretch Denim",
+    "price": 1699,
+    "description": "Premium stretch denim tailored for a sleek, figure-hugging skinny fit.",
+    "image": "/images/cat_jeans.png",
+    "colors": [
+      "Black",
+      "Grey",
+      "Navy Blue"
+    ],
+    "sizes": [
+      "26",
+      "28",
+      "30",
+      "32"
+    ],
+    "category": "Jeans"
+  },
+  {
+    "id": "prod_pant_1",
+    "title": "Formal Straight Trousers",
+    "price": 1299,
+    "description": "Crisp and tailored straight pants perfect for office wear or formal events.",
+    "image": "/images/cat_pant.png",
+    "colors": [
+      "Black",
+      "Beige",
+      "Navy Blue"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "category": "Straight Pant"
+  },
+  {
+    "id": "prod_pant_2",
+    "title": "Cotton Slub Pants",
+    "price": 999,
+    "description": "Breathable cotton slub straight pants that pair beautifully with any casual kurti.",
+    "image": "/images/cat_pant.png",
+    "colors": [
+      "White",
+      "Off White",
+      "Black"
+    ],
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "category": "Straight Pant"
+  },
+  {
+    "id": "prod_shortfrock_1",
+    "title": "Tiered Short Frock",
+    "price": 1799,
+    "description": "A playful tiered short frock with balloon sleeves and a flattering A-line silhouette.",
+    "image": "/images/cat_shortfrock.png",
+    "colors": [
+      "Peach",
+      "Mint Green",
+      "Lilac"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "category": "Short Frock"
+  },
+  {
+    "id": "prod_shortfrock_2",
+    "title": "Floral Mini Dress",
+    "price": 1599,
+    "description": "A chic short frock featuring vibrant floral patterns and a cinched waist.",
+    "image": "/images/cat_shortfrock.png",
+    "colors": [
+      "Red",
+      "Navy Blue",
+      "Yellow"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "category": "Short Frock"
+  },
+  {
+    "id": "prod_longfrock_1",
+    "title": "Elegant Evening Gown",
+    "price": 4999,
+    "description": "A sweeping long western frock perfect for evening parties and special occasions.",
+    "image": "/images/cat_longfrock.png",
+    "colors": [
+      "Emerald",
+      "Maroon",
+      "Black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "category": "Western - Long Frock"
+  },
+  {
+    "id": "prod_longfrock_2",
+    "title": "Bohemian Maxi Dress",
+    "price": 3299,
+    "description": "Flowy and relaxed bohemian long frock with intricate geometric prints.",
+    "image": "/images/cat_longfrock.png",
+    "colors": [
+      "Rust",
+      "Mustard",
+      "Olive"
+    ],
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "category": "Western - Long Frock"
+  },
+  {
+    "id": "prod_tshirt_1",
+    "title": "Classic Crew Neck Tee",
+    "price": 699,
+    "description": "A wardrobe essential. Soft, breathable cotton t-shirt with a classic crew neck.",
+    "image": "/images/cat_tshirt.png",
+    "colors": [
+      "White",
+      "Black",
+      "Grey"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "category": "T-Shirts"
+  },
+  {
+    "id": "prod_tshirt_2",
+    "title": "Graphic Oversized T-Shirt",
+    "price": 899,
+    "description": "Trendy oversized t-shirt featuring minimal graphic prints for a streetwear look.",
+    "image": "/images/cat_tshirt.png",
+    "colors": [
+      "Lavender",
+      "Beige",
+      "Charcoal"
+    ],
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "category": "T-Shirts"
+  },
+  {
+    "id": "prod_western_1",
+    "title": "Satin Slip Dress",
+    "price": 2599,
+    "description": "A luxurious satin slip dress that drapes elegantly, perfect for date nights.",
+    "image": "/images/cat_western.png",
+    "colors": [
+      "Champagne",
+      "Black",
+      "Rosegold"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "category": "Westerns"
+  },
+  {
+    "id": "prod_western_2",
+    "title": "Wrap Around Top",
+    "price": 1499,
+    "description": "A chic western wrap top that pairs perfectly with high-waisted jeans.",
+    "image": "/images/cat_western.png",
+    "colors": [
+      "White",
+      "Red",
+      "Navy Blue"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "category": "Westerns"
+  },
+  {
+    "id": "prod_shirt_1",
+    "title": "Crisp White Button-Down",
+    "price": 1299,
+    "description": "The ultimate formal and casual staple: a crisp, well-tailored white button-down shirt.",
+    "image": "/images/cat_shirt.png",
+    "colors": [
+      "White"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "category": "Shirts"
+  },
+  {
+    "id": "prod_shirt_2",
+    "title": "Striped Casual Shirt",
+    "price": 1199,
+    "description": "A relaxed fit striped shirt made from breathable linen blend for everyday wear.",
+    "image": "/images/cat_shirt.png",
+    "colors": [
+      "Blue Stripe",
+      "Pink Stripe",
+      "Grey Stripe"
+    ],
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "category": "Shirts"
+  },
+  {
+    "title": "kurti",
+    "price": 4000,
+    "description": "injknjknknkj",
+    "image": "/images/prod_1781706252653.jpg",
+    "colors": [
+      "red",
+      "blue",
+      "green",
+      "black .brown",
+      "white",
+      "grey",
+      "orange"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "category": "Kurti",
+    "id": "prod_1781706252653"
+  }
+]

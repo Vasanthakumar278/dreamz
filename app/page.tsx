@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import CollectionsSection from "@/components/CollectionsSection";
+import ProductGrid from "@/components/ProductGrid";
 import AboutSection from "@/components/AboutSection";
 import GallerySection from "@/components/GallerySection";
 import CustomerExperienceSection from "@/components/CustomerExperienceSection";
@@ -14,6 +15,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <CollectionsSection />
+      <ProductGrid />
       <AboutSection />
       <CustomerExperienceSection />
       <GallerySection />

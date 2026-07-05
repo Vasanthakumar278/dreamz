@@ -29,7 +29,7 @@ export default function AboutSection() {
             </h3>
             <div className="divider-stitch w-full mb-8 opacity-40"></div>
             <p className="font-sans font-light text-brand-ivory/90 mb-6 text-lg leading-relaxed drop-shadow-sm">
-              Founded in the heart of Puducherry, Dreamz Fashion Boutique is more than just a store; it is a destination for the modern woman who appreciates fine tailoring and exquisite fabrics.
+              Founded in the heart of Puducherry, The Label by Mayilini is more than just a store; it is a destination for the modern woman who appreciates fine tailoring and exquisite fabrics.
             </p>
             <p className="font-sans font-light text-brand-ivory/90 mb-10 text-lg leading-relaxed drop-shadow-sm">
               We believe in the power of personal styling. Our collections are carefully curated to ensure that every piece tells a story of elegance and empowers you to walk with confidence.
@@ -43,7 +43,7 @@ export default function AboutSection() {
               <div className="aspect-[3/4] overflow-hidden">
                 <img 
                   src="/images/shop-interior-1.webp" 
-                  alt="Dreamz Boutique Interior" 
+                  alt="The Label by Mayilini Interior" 
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-103"
                 />
               </div>

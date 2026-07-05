@@ -1,9 +1,9 @@
 export default function GallerySection() {
   const images = [
-    { src: "/images/shop-front.webp", alt: "Dreamz Boutique Exterior", frameType: "frame-wood", title: "Boutique Front" },
-    { src: "/images/shop-interior-1.webp", alt: "Dreamz Boutique Interior", frameType: "frame-gold", title: "Luxury Showroom" },
-    { src: "/images/shop-interior-2.webp", alt: "Dreamz Boutique Collections", frameType: "frame-gold", title: "Bridal Alcove" },
-    { src: "/images/shop-interior-3.webp", alt: "Dreamz Boutique Showroom", frameType: "frame-wood", title: "Signature Sarees" },
+    { src: "/images/shop-front.webp", alt: "The Label by Mayilini Exterior", frameType: "frame-wood", title: "Boutique Front" },
+    { src: "/images/shop-interior-1.webp", alt: "The Label by Mayilini Interior", frameType: "frame-gold", title: "Luxury Showroom" },
+    { src: "/images/shop-interior-2.webp", alt: "The Label by Mayilini Collections", frameType: "frame-gold", title: "Bridal Alcove" },
+    { src: "/images/shop-interior-3.webp", alt: "The Label by Mayilini Showroom", frameType: "frame-wood", title: "Signature Sarees" },
   ];
 
   return (
