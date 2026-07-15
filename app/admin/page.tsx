@@ -22,7 +22,12 @@ export default function AdminDashboard() {
     try {
       const res = await fetch('/api/products');
       const data = await res.json();
-      setProducts(data);
+      if (Array.isArray(data)) {
+        setProducts(data);
+      } else {
+        console.error('API returned non-array data:', data);
+        setProducts([]);
+      }
     } catch (e) {
       console.error(e);
     } finally {
@@ -45,14 +50,10 @@ export default function AdminDashboard() {
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setCurrentProduct((prev: any) => ({
-          ...prev,
-          imageBase64: reader.result as string
-        }));
-      };
-      reader.readAsDataURL(file);
+      setCurrentProduct((prev: any) => ({
+        ...prev,
+        imageFile: file // Store the actual File object
+      }));
     }
   };
 
@@ -67,6 +68,41 @@ export default function AdminDashboard() {
     };
 
     try {
+      const productId = currentProduct.id || `prod_${Date.now()}`;
+      
+      // Upload image directly to Supabase if a new file was selected
+      let finalImageUrl = currentProduct.image;
+      if (currentProduct.imageFile) {
+        const file = currentProduct.imageFile;
+        const fileExt = file.name.split('.').pop();
+        const fileName = `${productId}.${fileExt}`;
+        
+        // Import supabase dynamically or assume it's available. 
+        // We need to import it at the top of the file.
+        const { supabase } = await import('@/lib/supabase');
+        
+        const { data: uploadData, error: uploadError } = await supabase.storage
+          .from('product-images')
+          .upload(fileName, file, { upsert: true });
+          
+        if (uploadError) {
+          console.error("Upload error:", uploadError);
+          alert("Failed to upload image to Supabase.");
+          return;
+        }
+        
+        const { data: publicUrlData } = supabase.storage
+          .from('product-images')
+          .getPublicUrl(fileName);
+          
+        finalImageUrl = publicUrlData.publicUrl;
+      }
+      
+      formattedProduct.image = finalImageUrl;
+      // Remove the file object before sending to API
+      delete formattedProduct.imageFile;
+      delete formattedProduct.imageBase64;
+
       if (isEditing && currentProduct.id) {
         await fetch(`/api/products/${currentProduct.id}`, {
           method: 'PUT',
@@ -83,7 +119,7 @@ export default function AdminDashboard() {
       
       // Reset form
       setIsEditing(false);
-      setCurrentProduct({ title: '', price: 0, description: '', image: '', imageBase64: '', colors: '', sizes: '', category: 'Kurti' });
+      setCurrentProduct({ title: '', price: 0, description: '', image: '', colors: '', sizes: '', category: 'Kurti' });
       fetchProducts();
       
       // Reset file input

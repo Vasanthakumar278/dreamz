@@ -1,39 +1,6 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 
-// Upload base64 image to Supabase Storage and return public URL
-async function uploadImage(imageBase64: string, productId: string): Promise<string | null> {
-  try {
-    const matches = imageBase64.match(/^data:image\/([A-Za-z-+\/]+);base64,(.+)$/);
-    if (!matches || matches.length !== 3) return null;
-
-    const ext = matches[1] === 'jpeg' ? 'jpg' : matches[1];
-    const buffer = Buffer.from(matches[2], 'base64');
-    const filename = `${productId}.${ext}`;
-
-    const { error } = await supabase.storage
-      .from('product-images')
-      .upload(filename, buffer, {
-        contentType: `image/${matches[1]}`,
-        upsert: true,
-      });
-
-    if (error) {
-      console.error('Storage upload error:', error);
-      return null;
-    }
-
-    const { data } = supabase.storage
-      .from('product-images')
-      .getPublicUrl(filename);
-
-    return data.publicUrl;
-  } catch (e) {
-    console.error('Failed to upload image:', e);
-    return null;
-  }
-}
-
 // PUT /api/products/[id] — update a product
 export async function PUT(
   request: Request,
@@ -42,13 +9,6 @@ export async function PUT(
   try {
     const { id } = await context.params;
     const body = await request.json();
-
-    // Handle image upload if a new image was provided
-    let imageUrl = body.image || '';
-    if (body.imageBase64) {
-      const uploaded = await uploadImage(body.imageBase64, id);
-      if (uploaded) imageUrl = uploaded;
-    }
 
     // Format arrays
     const colors = typeof body.colors === 'string'
@@ -62,7 +22,7 @@ export async function PUT(
       title: body.title,
       price: body.price,
       description: body.description,
-      image: imageUrl,
+      image: body.image || '',
       colors,
       sizes,
       category: body.category,
