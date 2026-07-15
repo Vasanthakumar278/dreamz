@@ -7,6 +7,7 @@ export default function AdminDashboard() {
   const [products, setProducts] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
+  const [uploadStatus, setUploadStatus] = useState<'idle' | 'uploading' | 'done' | 'error'>('idle');
   const [currentProduct, setCurrentProduct] = useState<any>({
     title: '',
     price: 0,
@@ -73,12 +74,11 @@ export default function AdminDashboard() {
       // Upload image directly to Supabase if a new file was selected
       let finalImageUrl = currentProduct.image;
       if (currentProduct.imageFile) {
+        setUploadStatus('uploading');
         const file = currentProduct.imageFile;
         const fileExt = file.name.split('.').pop();
         const fileName = `${productId}.${fileExt}`;
         
-        // Import supabase dynamically or assume it's available. 
-        // We need to import it at the top of the file.
         const { supabase } = await import('@/lib/supabase');
         
         const { data: uploadData, error: uploadError } = await supabase.storage
@@ -86,8 +86,9 @@ export default function AdminDashboard() {
           .upload(fileName, file, { upsert: true });
           
         if (uploadError) {
+          setUploadStatus('error');
           console.error("Upload error:", uploadError);
-          alert("Failed to upload image to Supabase.");
+          alert(`Failed to upload image: ${uploadError.message}\n\nMake sure the 'product-images' bucket in Supabase Storage is set to Public.`);
           return;
         }
         
@@ -96,6 +97,7 @@ export default function AdminDashboard() {
           .getPublicUrl(fileName);
           
         finalImageUrl = publicUrlData.publicUrl;
+        setUploadStatus('done');
       }
       
       formattedProduct.image = finalImageUrl;
@@ -119,6 +121,7 @@ export default function AdminDashboard() {
       
       // Reset form
       setIsEditing(false);
+      setUploadStatus('idle');
       setCurrentProduct({ title: '', price: 0, description: '', image: '', colors: '', sizes: '', category: 'Kurti' });
       fetchProducts();
       
@@ -200,11 +203,29 @@ export default function AdminDashboard() {
               <div>
                 <label className="block text-xs uppercase tracking-widest text-gray-500 mb-1">Image Upload</label>
                 <input id="imageUpload" type="file" accept="image/*" onChange={handleImageUpload} className="w-full bg-[#1a1a1a] border border-[#333] rounded px-3 py-2 focus:border-brand-rosegold outline-none transition-colors file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-brand-rosegold file:text-white hover:file:bg-[#a6686c] text-gray-300" />
-                {currentProduct.imageBase64 ? (
-                  <div className="mt-2 text-xs text-green-400">Image selected for upload</div>
+                {currentProduct.imageFile ? (
+                  <div className="mt-2 flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
+                    <span className="text-xs text-yellow-400">New image selected — will upload on Save</span>
+                  </div>
                 ) : currentProduct.image ? (
-                  <div className="mt-2 text-xs text-gray-400">Current image: {currentProduct.image}</div>
+                  <div className="mt-2">
+                    <img src={currentProduct.image} alt="Current" className="h-16 w-16 object-cover rounded border border-[#333]" />
+                    <div className="mt-1 text-[10px] text-gray-500 truncate max-w-full">{currentProduct.image}</div>
+                  </div>
                 ) : null}
+                {uploadStatus === 'uploading' && (
+                  <div className="mt-2 flex items-center gap-2 text-xs text-blue-400">
+                    <div className="w-3 h-3 border-2 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
+                    Uploading image...
+                  </div>
+                )}
+                {uploadStatus === 'error' && (
+                  <div className="mt-2 text-xs text-red-400">❌ Upload failed. Check console for details.</div>
+                )}
+                {uploadStatus === 'done' && (
+                  <div className="mt-2 text-xs text-green-400">✅ Image uploaded successfully!</div>
+                )}
               </div>
 
               <div>
