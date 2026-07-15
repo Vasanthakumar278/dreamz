@@ -8,6 +8,7 @@ export default function AdminDashboard() {
   const [isLoading, setIsLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
   const [uploadStatus, setUploadStatus] = useState<'idle' | 'uploading' | 'done' | 'error'>('idle');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentProduct, setCurrentProduct] = useState<any>({
     title: '',
     price: 0,
@@ -60,6 +61,8 @@ export default function AdminDashboard() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return; // Guard against double-submit
+    setIsSubmitting(true);
     
     // Format colors and sizes into arrays
     const formattedProduct = {
@@ -131,6 +134,8 @@ export default function AdminDashboard() {
     } catch (e) {
       console.error(e);
       alert("Failed to save product.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -245,8 +250,23 @@ export default function AdminDashboard() {
               </div>
 
               <div className="flex gap-2 mt-4">
-                <button type="submit" className="flex-1 bg-brand-rosegold hover:bg-[#a6686c] text-white py-3 rounded font-bold uppercase tracking-wider text-sm transition-colors">
-                  {isEditing ? 'Update' : 'Save'}
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`flex-1 py-3 rounded font-bold uppercase tracking-wider text-sm transition-colors flex items-center justify-center gap-2 ${
+                    isSubmitting
+                      ? 'bg-[#7a4d50] text-white/60 cursor-not-allowed'
+                      : 'bg-brand-rosegold hover:bg-[#a6686c] text-white'
+                  }`}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin"></div>
+                      {uploadStatus === 'uploading' ? 'Uploading...' : 'Saving...'}
+                    </>
+                  ) : (
+                    isEditing ? 'Update' : 'Save'
+                  )}
                 </button>
                 {isEditing && (
                   <button type="button" onClick={() => { 
