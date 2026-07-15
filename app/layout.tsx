@@ -19,6 +19,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "The Label by Mayilini",
   description: "Contemporary Fashion For Modern Women - Sarees, Kurtis, and Designer Wear in Puducherry, India.",
+  icons: {
+    icon: '/images/logo.jpeg',
+    shortcut: '/images/logo.jpeg',
+    apple: '/images/logo.jpeg',
+  },
 };
 
 export default function RootLayout({
