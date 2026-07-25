@@ -149,6 +149,13 @@ export default function QuickViewModal({ productId, productData, onClose }: Quic
         {/* Details Section */}
         <div className="w-full md:w-1/2 p-8 flex flex-col">
           <h2 className="text-3xl font-serif font-bold tracking-wider uppercase mb-2 text-brand-ivory">{product.title}</h2>
+          
+          {product.model && (
+            <div className="inline-block bg-[#222] border border-brand-rosegold/40 text-brand-rosegold text-xs font-semibold px-3 py-1 rounded-md mb-4 self-start">
+              Model: {product.model}
+            </div>
+          )}
+
           <div className="text-2xl font-sans font-medium text-brand-rosegold mb-6">₹{product.price.toLocaleString()}</div>
           
           <p className="text-gray-400 font-sans text-sm leading-relaxed mb-8">

@@ -1,9 +1,9 @@
 export default function GallerySection() {
   const images = [
-    { src: "/images/shop-front.webp", alt: "The Label by Mayilini Exterior", frameType: "frame-wood", title: "Boutique Front" },
-    { src: "/images/shop-interior-1.webp", alt: "The Label by Mayilini Interior", frameType: "frame-gold", title: "Luxury Showroom" },
-    { src: "/images/shop-interior-2.webp", alt: "The Label by Mayilini Collections", frameType: "frame-gold", title: "Bridal Alcove" },
-    { src: "/images/shop-interior-3.webp", alt: "The Label by Mayilini Showroom", frameType: "frame-wood", title: "Signature Sarees" },
+    { src: "/images/shop-front.webp", alt: "Label by Mayilini Exterior", frameType: "frame-wood", title: "Boutique Front" },
+    { src: "/images/shop-interior-1.webp", alt: "Label by Mayilini Interior", frameType: "frame-gold", title: "Luxury Showroom" },
+    { src: "/images/shop-interior-2.webp", alt: "Label by Mayilini Collections", frameType: "frame-gold", title: "Co-ord Sets Alcove" },
+    { src: "/images/shop-interior-3.webp", alt: "Label by Mayilini Showroom", frameType: "frame-wood", title: "Kurti & 3-Piece Sets" },
   ];
 
   return (
@@ -26,10 +26,9 @@ export default function GallerySection() {
           <div className="grid gap-16">
             {/* Image 1 */}
             <div className="flex flex-col items-center">
-              <div className={`relative p-4 bg-[#fbf9f4] ${images[0].frameType} shadow-2xl w-full transition-transform duration-500 hover:-rotate-1 hover:scale-[1.01]`}>
-                <div className="absolute inset-4 shadow-[inset_0_4px_10px_rgba(0,0,0,0.5)] pointer-events-none z-10"></div>
+              <div className="relative overflow-hidden rounded-2xl border border-brand-gold/30 shadow-2xl w-full transition-all duration-500 hover:-rotate-1 hover:scale-[1.02] hover:border-brand-gold">
                 <div className="aspect-[3/4] overflow-hidden">
-                  <img src={images[0].src} alt={images[0].alt} className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700" />
+                  <img src={images[0].src} alt={images[0].alt} className="w-full h-full object-cover hover:scale-[1.04] transition-transform duration-700" />
                 </div>
               </div>
               {/* Gold Nameplate */}
@@ -40,10 +39,9 @@ export default function GallerySection() {
 
             {/* Image 2 */}
             <div className="flex flex-col items-center">
-              <div className={`relative p-3 bg-[#fbf9f4] ${images[1].frameType} shadow-2xl w-full transition-transform duration-500 hover:rotate-1 hover:scale-[1.01]`}>
-                <div className="absolute inset-3 shadow-[inset_0_4px_10px_rgba(0,0,0,0.5)] pointer-events-none z-10"></div>
+              <div className="relative overflow-hidden rounded-2xl border border-brand-gold/30 shadow-2xl w-full transition-all duration-500 hover:rotate-1 hover:scale-[1.02] hover:border-brand-gold">
                 <div className="aspect-square overflow-hidden">
-                  <img src={images[1].src} alt={images[1].alt} className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700" />
+                  <img src={images[1].src} alt={images[1].alt} className="w-full h-full object-cover hover:scale-[1.04] transition-transform duration-700" />
                 </div>
               </div>
               {/* Gold Nameplate */}
@@ -56,10 +54,9 @@ export default function GallerySection() {
           <div className="grid gap-16">
             {/* Image 3 */}
             <div className="flex flex-col items-center">
-              <div className={`relative p-3 bg-[#fbf9f4] ${images[2].frameType} shadow-2xl w-full transition-transform duration-500 hover:-rotate-1 hover:scale-[1.01]`}>
-                <div className="absolute inset-3 shadow-[inset_0_4px_10px_rgba(0,0,0,0.5)] pointer-events-none z-10"></div>
+              <div className="relative overflow-hidden rounded-2xl border border-brand-gold/30 shadow-2xl w-full transition-all duration-500 hover:-rotate-1 hover:scale-[1.02] hover:border-brand-gold">
                 <div className="aspect-square overflow-hidden">
-                  <img src={images[2].src} alt={images[2].alt} className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700" />
+                  <img src={images[2].src} alt={images[2].alt} className="w-full h-full object-cover hover:scale-[1.04] transition-transform duration-700" />
                 </div>
               </div>
               {/* Gold Nameplate */}
@@ -70,10 +67,9 @@ export default function GallerySection() {
 
             {/* Image 4 */}
             <div className="flex flex-col items-center">
-              <div className={`relative p-4 bg-[#fbf9f4] ${images[3].frameType} shadow-2xl w-full transition-transform duration-500 hover:rotate-1 hover:scale-[1.01]`}>
-                <div className="absolute inset-4 shadow-[inset_0_4px_10px_rgba(0,0,0,0.5)] pointer-events-none z-10"></div>
+              <div className="relative overflow-hidden rounded-2xl border border-brand-gold/30 shadow-2xl w-full transition-all duration-500 hover:rotate-1 hover:scale-[1.02] hover:border-brand-gold">
                 <div className="aspect-[3/4] overflow-hidden">
-                  <img src={images[3].src} alt={images[3].alt} className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700" />
+                  <img src={images[3].src} alt={images[3].alt} className="w-full h-full object-cover hover:scale-[1.04] transition-transform duration-700" />
                 </div>
               </div>
               {/* Gold Nameplate */}

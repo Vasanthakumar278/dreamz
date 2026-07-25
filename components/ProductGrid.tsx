@@ -15,8 +15,8 @@ export default function ProductGrid() {
   const categories = [
     "All",
     "Kurti",
-    "2 Piece Set",
-    "3 Piece Set",
+    "Co-ord Sets",
+    "3 Piece Kurti Set",
     "Jeans",
     "Straight Pant",
     "Short Frock",
@@ -41,7 +41,15 @@ export default function ProductGrid() {
 
   const filteredProducts = activeCategory === "All" 
     ? products 
-    : products.filter((p: any) => p.category === activeCategory);
+    : products.filter((p: any) => {
+        if (activeCategory === "Co-ord Sets") {
+          return p.category === "Co-ord Sets" || p.category === "2 Piece Set";
+        }
+        if (activeCategory === "3 Piece Kurti Set") {
+          return p.category === "3 Piece Kurti Set" || p.category === "3 Piece Set";
+        }
+        return p.category === activeCategory;
+      });
 
   return (
     <section id="products" className="py-24 bg-[#0a0a0a] text-white w-full relative z-10">
@@ -113,7 +121,14 @@ export default function ProductGrid() {
               
               {/* Product Details */}
               <div className="p-5 flex flex-col flex-grow">
-                <div className="text-[10px] text-brand-rosegold uppercase tracking-widest mb-1 font-bold">Womenswear</div>
+                <div className="flex justify-between items-center mb-1">
+                  <div className="text-[10px] text-brand-rosegold uppercase tracking-widest font-bold">{product.category || 'Womenswear'}</div>
+                  {product.model && (
+                    <div className="text-[10px] text-gray-400 bg-[#222] border border-[#333] px-2 py-0.5 rounded uppercase tracking-wider">
+                      {product.model}
+                    </div>
+                  )}
+                </div>
                 <h3 className="font-serif text-lg tracking-wide mb-2 flex-grow text-gray-200">{product.title}</h3>
                 <div className="text-lg font-sans font-semibold text-brand-ivory">₹{product.price.toLocaleString()}</div>
               </div>

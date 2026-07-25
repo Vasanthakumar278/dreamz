@@ -20,7 +20,7 @@ export default function HeroSection() {
           Contemporary Fashion <br/> For Modern Women
         </h1>
         <p className="text-lg md:text-xl text-brand-ivory/95 font-sans max-w-2xl mx-auto mb-12 font-light drop-shadow-md">
-          Curated collections of sarees, kurtis, designer wear, and statement pieces crafted for confidence and elegance.
+          Curated collections of Kurtis, Co-ord sets, 3-piece kurti sets, and statement designer pieces crafted for confidence and elegance.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-8">

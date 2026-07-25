@@ -22,29 +22,28 @@ export const metadata: Metadata = {
     default: "The Label by Mayilini | Women's Fashion Boutique in Puducherry",
     template: "%s | The Label by Mayilini"
   },
-  description: "Discover contemporary fashion for modern women. Shop custom designer kurtis, designer sarees, bridal wear, and custom boutique outfits at The Label by Mayilini, Puducherry, India.",
+  description: "Discover contemporary fashion for modern women. Shop designer kurtis, co-ord sets, 3-piece kurti sets, and boutique outfits at Label by Mayilini, Puducherry, India.",
   keywords: [
-    "Mayilini Boutique Puducherry",
-    "Boutique in Pondicherry",
-    "Designer Sarees Puducherry",
-    "Custom Kurtis Pondicherry",
-    "Bridal Wear Puducherry",
-    "Women's Clothing Store Pondicherry",
-    "Contemporary Women Fashion India",
-    "Designer Blouses Puducherry"
+    "Label by Mayilini Puducherry",
+    "Dreamz Fashion Boutique",
+    "Designer Kurtis Pondicherry",
+    "Co-ord Sets Puducherry",
+    "3 Piece Kurti Sets Pondicherry",
+    "Women's Online Fashion India",
+    "Boutique Clothing Pondicherry"
   ],
-  authors: [{ name: "The Label by Mayilini" }],
+  authors: [{ name: "Label by Mayilini" }],
   openGraph: {
-    title: "The Label by Mayilini | Women's Boutique in Puducherry",
-    description: "Contemporary fashion for modern women. Designer sarees, custom kurtis, and bridal wear tailored to perfection in Puducherry, India.",
+    title: "Label by Mayilini | Women's Fashion & Co-ord Sets",
+    description: "Contemporary fashion for modern women. Designer kurtis, co-ord sets, and 3-piece kurti sets online from Dreamz Fashion Boutique, Puducherry, India.",
     url: "https://www.mayilini.in",
-    siteName: "The Label by Mayilini",
+    siteName: "Label by Mayilini",
     images: [
       {
         url: "/images/logo_circle.png",
         width: 1024,
         height: 1024,
-        alt: "The Label by Mayilini Logo",
+        alt: "Label by Mayilini Logo",
       }
     ],
     locale: "en_IN",
@@ -52,8 +51,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Label by Mayilini | Boutique in Puducherry",
-    description: "Shop designer sarees, kurtis, and custom bridal wear in Puducherry.",
+    title: "Label by Mayilini | Boutique Online Store",
+    description: "Shop designer kurtis, co-ord sets, and 3-piece kurti sets online from Puducherry.",
     images: ["/images/logo_circle.png"],
   },
   icons: {

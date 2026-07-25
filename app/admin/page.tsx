@@ -16,7 +16,8 @@ export default function AdminDashboard() {
     image: '',
     colors: '',
     sizes: '',
-    category: 'Kurti'
+    category: 'Kurti',
+    model: ''
   });
 
   const fetchProducts = async () => {
@@ -125,7 +126,7 @@ export default function AdminDashboard() {
       // Reset form
       setIsEditing(false);
       setUploadStatus('idle');
-      setCurrentProduct({ title: '', price: 0, description: '', image: '', colors: '', sizes: '', category: 'Kurti' });
+      setCurrentProduct({ title: '', price: 0, description: '', image: '', colors: '', sizes: '', category: 'Kurti', model: '' });
       fetchProducts();
       
       // Reset file input
@@ -192,8 +193,8 @@ export default function AdminDashboard() {
                   <label className="block text-xs uppercase tracking-widest text-gray-500 mb-1">Category</label>
                   <select name="category" value={currentProduct.category} onChange={handleInputChange} className="w-full bg-[#1a1a1a] border border-[#333] rounded px-3 py-2 focus:border-brand-rosegold outline-none transition-colors">
                     <option value="Kurti">Kurti</option>
-                    <option value="2 Piece Set">2 Piece Set</option>
-                    <option value="3 Piece Set">3 Piece Set</option>
+                    <option value="Co-ord Sets">Co-ord Sets</option>
+                    <option value="3-Piece Kurti Set">3-Piece Kurti Set</option>
                     <option value="Jeans">Jeans</option>
                     <option value="Straight Pant">Straight Pant</option>
                     <option value="Short Frock">Short Frock</option>
@@ -203,6 +204,12 @@ export default function AdminDashboard() {
                     <option value="Shirts">Shirts</option>
                   </select>
                 </div>
+              </div>
+
+              <div>
+                <label className="block text-xs uppercase tracking-widest text-gray-500 mb-1">Dress Model / Fit (Optional)</label>
+                <input type="text" name="model" placeholder="e.g. A-Line, Straight Fit, Anarkali, Crop Top & Pants" value={currentProduct.model || ''} onChange={handleInputChange} className="w-full bg-[#1a1a1a] border border-[#333] rounded px-3 py-2 focus:border-brand-rosegold outline-none transition-colors" />
+                <p className="text-[10px] text-gray-500 mt-1">Specify dress model style (e.g. Anarkali, Flared, Straight Cut, Peplum Co-ord, etc.)</p>
               </div>
 
               <div>
@@ -301,7 +308,14 @@ export default function AdminDashboard() {
                     <img src={p.image} alt={p.title} className="w-20 h-24 object-cover rounded bg-[#1a1a1a]" />
                     <div className="flex flex-col flex-1">
                       <h3 className="font-serif text-lg text-white leading-tight mb-1">{p.title}</h3>
-                      <div className="text-brand-rosegold font-bold text-sm mb-2">₹{p.price} <span className="text-gray-500 text-xs ml-2 font-normal">({p.category})</span></div>
+                      <div className="text-brand-rosegold font-bold text-sm mb-1">
+                        ₹{p.price} <span className="text-gray-500 text-xs ml-2 font-normal">({p.category})</span>
+                      </div>
+                      {p.model && (
+                        <div className="text-[11px] text-gray-400 mb-2">
+                          <span className="text-gray-500 font-semibold">Model:</span> {p.model}
+                        </div>
+                      )}
                       
                       <div className="mt-auto flex gap-2">
                         <button onClick={() => editProduct(p)} className="flex-1 bg-[#222] hover:bg-[#333] text-white text-xs uppercase tracking-widest py-2 rounded transition-colors border border-[#444]">

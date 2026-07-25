@@ -23,13 +23,13 @@ export default function VisitStoreSection() {
               </div>
               
               <div className="pl-6 space-y-6">
-                <h2 className="font-serif text-3xl mb-6 font-bold text-letterpress-dark tracking-wide">Visit Our Boutique</h2>
+                <h2 className="font-serif text-3xl mb-6 font-bold text-letterpress-dark tracking-wide">Visit Our Store</h2>
                 
                 <div className="space-y-6 font-sans">
                   <div>
                     <h3 className="uppercase tracking-widest text-xs text-brand-rosegold font-bold mb-1">Location</h3>
                     <p className="font-light text-brand-black/90 leading-relaxed text-sm">
-                      The Label by Mayilini<br/>
+                      Dreamz Fashion Boutique<br/>
                       162, Nehru Street,<br/>
                       Near Singapur Silai, Pondicherry Bazaar,<br/>
                       Puducherry 605001<br/>
@@ -40,8 +40,7 @@ export default function VisitStoreSection() {
                   <div>
                     <h3 className="uppercase tracking-widest text-xs text-brand-rosegold font-bold mb-1">Hours</h3>
                     <p className="font-light text-brand-black/90 leading-relaxed text-sm">
-                      Monday - Saturday: 10:00 AM - 8:30 PM<br/>
-                      Sunday: 11:00 AM - 6:00 PM
+                      Monday – Sunday: 10:00 AM – 9:30 PM
                     </p>
                   </div>
                   

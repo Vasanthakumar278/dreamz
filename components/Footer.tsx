@@ -18,7 +18,7 @@ export default function Footer() {
             </div>
           </div>
           <p className="font-sans font-light text-brand-ivory/80 leading-relaxed text-sm">
-            A premium fashion boutique in Puducherry offering curated collections of sarees, kurtis, and designer wear.
+            Official online store and digital extension of <strong className="text-brand-rosegold font-normal">Dreamz Fashion Boutique</strong> in Puducherry, offering curated collections of Kurtis, Co-ord sets, and 3-piece kurti sets.
           </p>
         </div>
         
@@ -35,9 +35,8 @@ export default function Footer() {
         <div>
           <h3 className="font-sans uppercase tracking-widest text-xs mb-6 text-brand-rosegold font-bold text-letterpress-light">Social</h3>
           <ul className="space-y-4 font-sans font-light text-sm text-brand-ivory/85">
-            <li><a href="#" className="hover:text-brand-rosegold hover:underline transition-all">Instagram</a></li>
-            <li><a href="#" className="hover:text-brand-rosegold hover:underline transition-all">Facebook</a></li>
-            <li><a href="#" className="hover:text-brand-rosegold hover:underline transition-all">Pinterest</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-rosegold hover:underline transition-all">Instagram</a></li>
+            <li><a href="https://wa.me/9677986327" target="_blank" rel="noopener noreferrer" className="hover:text-brand-rosegold hover:underline transition-all">WhatsApp</a></li>
           </ul>
         </div>
         

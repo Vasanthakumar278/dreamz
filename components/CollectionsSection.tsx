@@ -2,20 +2,20 @@ export default function CollectionsSection() {
   const collections = [
     {
       id: 1,
-      title: "Signature Sarees",
-      description: "Handwoven elegance with rich borders and intricate patterns, curated for timeless grace and heritage styling.",
-      image: "/images/saree.png"
-    },
-    {
-      id: 2,
       title: "Designer Kurtis",
-      description: "Contemporary cuts blended with traditional hand embroidery, providing modern silhouettes for everyday luxury.",
+      description: "Contemporary cuts blended with traditional hand embroidery, providing modern silhouettes for everyday luxury and workwear.",
       image: "/images/kurti.png"
     },
     {
+      id: 2,
+      title: "Co-ord Sets",
+      description: "Trendy, effortless 2-piece matching co-ord sets designed for modern comfort, casual chic outings, and stylish daily wear.",
+      image: "/images/saree.png"
+    },
+    {
       id: 3,
-      title: "Bridal Collection",
-      description: "Exquisite heavy craftsmanship, custom detailing, and luxurious fabrics tailored to perfection for your special day.",
+      title: "3-Piece Kurti Sets",
+      description: "Complete elegant ensembles including beautifully detailed kurti, matching bottom wear, and dupattas for festive and occasion wear.",
       image: "/images/bridal.png"
     }
   ];
@@ -39,16 +39,14 @@ export default function CollectionsSection() {
         <div className="space-y-32">
           {collections.map((item, index) => (
             <div key={item.id} className={`flex flex-col md:flex-row items-center gap-16 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-              {/* Wooden Framed Artwork Card */}
+              {/* Modern Sleek Image Card */}
               <div className="w-full md:w-1/2 flex justify-center">
-                <div className="relative p-4 bg-[#fbf9f4] frame-wood shadow-2xl max-w-md w-full transition-transform duration-500 hover:rotate-1 hover:scale-[1.02]">
-                  {/* Subtle inner shadow overlay inside frame */}
-                  <div className="absolute inset-4 shadow-[inset_0_4px_10px_rgba(0,0,0,0.5)] pointer-events-none z-10"></div>
+                <div className="relative overflow-hidden rounded-2xl border border-brand-gold/30 shadow-2xl max-w-md w-full transition-all duration-500 hover:rotate-1 hover:scale-[1.02] hover:border-brand-gold/60">
                   <div className="aspect-[4/5] overflow-hidden bg-brand-beige">
                     <img 
                       src={item.image} 
                       alt={item.title} 
-                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.04]"
+                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.05]"
                     />
                   </div>
                 </div>
