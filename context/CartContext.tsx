@@ -8,6 +8,10 @@ export type Product = {
   price: number;
   image: string;
   description: string;
+  category?: string;
+  model?: string;
+  colors?: string[];
+  sizes?: string[];
 };
 
 export type CartItem = Product & {
