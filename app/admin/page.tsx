@@ -195,13 +195,6 @@ export default function AdminDashboard() {
                     <option value="Kurti">Kurti</option>
                     <option value="Co-ord Sets">Co-ord Sets</option>
                     <option value="3-Piece Kurti Set">3-Piece Kurti Set</option>
-                    <option value="Jeans">Jeans</option>
-                    <option value="Straight Pant">Straight Pant</option>
-                    <option value="Short Frock">Short Frock</option>
-                    <option value="Western - Long Frock">Western - Long Frock</option>
-                    <option value="T-Shirts">T-Shirts</option>
-                    <option value="Westerns">Westerns</option>
-                    <option value="Shirts">Shirts</option>
                   </select>
                 </div>
               </div>

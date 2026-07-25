@@ -16,14 +16,7 @@ export default function ProductGrid() {
     "All",
     "Kurti",
     "Co-ord Sets",
-    "3 Piece Kurti Set",
-    "Jeans",
-    "Straight Pant",
-    "Short Frock",
-    "Western - Long Frock",
-    "T-Shirts",
-    "Westerns",
-    "Shirts"
+    "3 Piece Kurti Set"
   ];
 
   useEffect(() => {
