@@ -17,15 +17,17 @@ export default function Navbar() {
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="flex items-center space-x-3 group">
-                <div className="relative p-[2px] bg-gold-metallic rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.3)] group-hover:scale-105 transition-transform duration-300">
+              <Link href="/" className="flex items-center group">
+                <div
+                  className="relative group-hover:scale-105 transition-transform duration-300"
+                  style={{ width: '52px', height: '52px' }}
+                >
                   <img
-                    src="/images/logo.jpeg"
-                    alt="The Label by Mayilini Logo"
-                    className="h-12 w-12 object-cover rounded-full border border-black/10"
+                    src="/images/logo_round.png"
+                    alt="Label by Mayilini Logo"
+                    className="w-full h-full object-contain"
                   />
                 </div>
-                <span className="font-serif text-2xl tracking-wider text-white font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">MAYILINI</span>
               </Link>
             </div>
             <div className="hidden md:flex items-center space-x-4">

@@ -8,11 +8,14 @@ export default function Footer() {
       
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
         <div className="md:col-span-1">
-          <div className="flex items-center space-x-3 mb-6">
-            <div className="relative p-[1px] bg-gold-metallic rounded-full shadow-md">
-              <img src="/images/logo.jpeg" alt="The Label by Mayilini Logo" className="h-16 w-16 object-cover rounded-full border border-black/10" />
+          <div className="flex items-center mb-6">
+            <div style={{ width: '64px', height: '64px' }}>
+              <img
+                src="/images/logo_round.png"
+                alt="Label by Mayilini Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
-            <h2 className="font-serif text-3xl tracking-widest text-engraved-rosegold font-bold">MAYILINI</h2>
           </div>
           <p className="font-sans font-light text-brand-ivory/80 leading-relaxed text-sm">
             A premium fashion boutique in Puducherry offering curated collections of sarees, kurtis, and designer wear.

@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     siteName: "The Label by Mayilini",
     images: [
       {
-        url: "/images/logo.jpeg",
-        width: 800,
-        height: 800,
+        url: "/images/logo_circle.png",
+        width: 1024,
+        height: 1024,
         alt: "The Label by Mayilini Logo",
       }
     ],
@@ -54,12 +54,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Label by Mayilini | Boutique in Puducherry",
     description: "Shop designer sarees, kurtis, and custom bridal wear in Puducherry.",
-    images: ["/images/logo.jpeg"],
+    images: ["/images/logo_circle.png"],
   },
   icons: {
-    icon: '/images/logo.jpeg',
-    shortcut: '/images/logo.jpeg',
-    apple: '/images/logo.jpeg',
+    icon: [{ url: '/favicon.png', type: 'image/png' }],
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
   },
 };
 
