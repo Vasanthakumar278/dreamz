@@ -35,7 +35,7 @@ export default function Footer() {
         <div>
           <h3 className="font-sans uppercase tracking-widest text-xs mb-6 text-brand-rosegold font-bold text-letterpress-light">Social</h3>
           <ul className="space-y-4 font-sans font-light text-sm text-brand-ivory/85">
-            <li><a href="https://www.instagram.com/thelabelbymayilini" target="_blank" rel="noopener noreferrer" className="hover:text-brand-rosegold hover:underline transition-all">Instagram</a></li>
+            <li><a href="https://www.instagram.com/dreamz_fashion_py/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-rosegold hover:underline transition-all">Instagram</a></li>
             <li><a href="https://wa.me/9677986327" target="_blank" rel="noopener noreferrer" className="hover:text-brand-rosegold hover:underline transition-all">WhatsApp</a></li>
           </ul>
         </div>
