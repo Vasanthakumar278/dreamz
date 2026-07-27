@@ -6,17 +6,6 @@ export default function HeroSection() {
   const slides = [
     {
       id: 1,
-      image: "/images/shop-front.webp",
-      tag: "Boutique Collection",
-      title: "Contemporary Fashion\nFor Modern Women",
-      subtitle: "Curated collections of Kurtis, Co-ord sets, 3-piece kurti sets, and statement designer pieces crafted for confidence and elegance.",
-      primaryBtnText: "View Collections",
-      primaryBtnLink: "#collections",
-      secondaryBtnText: "WhatsApp Us",
-      secondaryBtnLink: "https://wa.me/9677986327?text=Hello%20Mayilini%20Boutique"
-    },
-    {
-      id: 2,
       image: "/images/cat_3piece.png",
       tag: "Festive & Occasion Wear",
       title: "3-Piece Kurti\nEnsembles",
@@ -27,7 +16,7 @@ export default function HeroSection() {
       secondaryBtnLink: "https://wa.me/9677986327?text=Hello%20Mayilini%20Boutique,%20I%20want%20to%20know%20about%203-Piece%20Kurti%20Sets"
     },
     {
-      id: 3,
+      id: 2,
       image: "/images/cat_2piece.png",
       tag: "Modern Comfort",
       title: "Trendy Matching\nCo-ord Sets",
@@ -38,7 +27,7 @@ export default function HeroSection() {
       secondaryBtnLink: "https://wa.me/9677986327?text=Hello%20Mayilini%20Boutique,%20I%20want%20to%20know%20about%20Co-ord%20Sets"
     },
     {
-      id: 4,
+      id: 3,
       image: "/images/cat_kurti.png",
       tag: "Everyday Luxury",
       title: "Designer Kurtis &\nHand Embroideries",
@@ -59,24 +48,24 @@ export default function HeroSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 4500);
+    }, 2800);
     return () => clearInterval(interval);
   }, [nextSlide]);
 
   return (
     <section className="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden py-20 md:py-24">
-      {/* Background Image Slideshow with Smooth Crossfade */}
+      {/* Background Image Slideshow with Smooth Faster Crossfade */}
       {slides.map((slide, idx) => (
         <div 
           key={slide.id}
-          className={`absolute inset-0 z-0 transition-opacity duration-1000 ease-in-out ${
+          className={`absolute inset-0 z-0 transition-opacity duration-700 ease-in-out ${
             idx === currentIndex ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >
           <img 
             src={slide.image} 
             alt={slide.title.replace('\n', ' ')} 
-            className={`w-full h-full object-cover transition-transform duration-[5000ms] ease-out ${
+            className={`w-full h-full object-cover transition-transform duration-[3500ms] ease-out ${
               idx === currentIndex ? "scale-105" : "scale-100"
             }`}
           />
@@ -93,8 +82,8 @@ export default function HeroSection() {
         {slides.map((slide, idx) => (
           <div 
             key={slide.id}
-            className={`transition-all duration-700 ${
-              idx === currentIndex ? "block opacity-100 translate-y-0" : "hidden opacity-0 translate-y-4"
+            className={`transition-all duration-500 ${
+              idx === currentIndex ? "block opacity-100 translate-y-0" : "hidden opacity-0 translate-y-3"
             }`}
           >
             {/* Tag Badge */}
@@ -141,7 +130,7 @@ export default function HeroSection() {
           <button
             key={idx}
             onClick={() => setCurrentIndex(idx)}
-            className={`h-2.5 rounded-full transition-all duration-500 ${
+            className={`h-2.5 rounded-full transition-all duration-300 ${
               idx === currentIndex 
                 ? "w-8 bg-brand-rosegold shadow-[0_0_12px_rgba(198,125,130,0.9)]" 
                 : "w-2.5 bg-white/40 hover:bg-white/80"
