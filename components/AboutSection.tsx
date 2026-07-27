@@ -55,8 +55,8 @@ export default function AboutSection() {
             <div className="relative overflow-hidden rounded-2xl border border-brand-gold/40 shadow-2xl max-w-sm w-full transition-all duration-500 hover:-rotate-1 hover:scale-[1.02] hover:border-brand-gold">
               <div className="aspect-[3/4] overflow-hidden bg-[#1c0f0a]">
                 <img 
-                  src="/images/shop-interior-1.webp" 
-                  alt="Label by Mayilini Interior" 
+                  src="/images/bridal.png" 
+                  alt="Label by Mayilini Boutique Collection" 
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
               </div>
