@@ -65,7 +65,7 @@ export default function HeroSection() {
           <img 
             src={slide.image} 
             alt={slide.title.replace('\n', ' ')} 
-            className={`w-full h-full object-cover transition-transform duration-[3500ms] ease-out ${
+            className={`w-full h-full object-cover object-top transition-transform duration-[3500ms] ease-out ${
               idx === currentIndex ? "scale-105" : "scale-100"
             }`}
           />
@@ -78,7 +78,7 @@ export default function HeroSection() {
       <div className="absolute inset-3 md:inset-4 border-2 border-brand-rosegold/30 rounded-3xl pointer-events-none z-10 shadow-[inset_0_0_100px_rgba(0,0,0,0.8)]"></div>
 
       {/* Slide Content */}
-      <div className="relative z-20 text-center px-6 max-w-4xl mx-auto pt-16 md:pt-20 pb-12">
+      <div className="relative z-20 text-center px-6 max-w-4xl mx-auto pt-24 md:pt-28 pb-12">
         {slides.map((slide, idx) => (
           <div 
             key={slide.id}
