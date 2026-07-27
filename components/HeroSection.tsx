@@ -51,31 +51,21 @@ export default function HeroSection() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % slides.length);
   }, [slides.length]);
 
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
   useEffect(() => {
-    if (isPaused) return;
     const interval = setInterval(() => {
       nextSlide();
-    }, 5000);
+    }, 4500);
     return () => clearInterval(interval);
-  }, [nextSlide, isPaused]);
+  }, [nextSlide]);
 
   return (
-    <section 
-      className="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden py-20 md:py-24"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
-      {/* Background Image Slideshow with Crossfade & Ken Burns Effect */}
+    <section className="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden py-20 md:py-24">
+      {/* Background Image Slideshow with Smooth Crossfade */}
       {slides.map((slide, idx) => (
         <div 
           key={slide.id}
@@ -86,11 +76,11 @@ export default function HeroSection() {
           <img 
             src={slide.image} 
             alt={slide.title.replace('\n', ' ')} 
-            className={`w-full h-full object-cover transition-transform duration-[6000ms] ease-out ${
+            className={`w-full h-full object-cover transition-transform duration-[5000ms] ease-out ${
               idx === currentIndex ? "scale-105" : "scale-100"
             }`}
           />
-          {/* Vignette Overlay */}
+          {/* Soft vignette overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-brand-black/75 via-brand-black/55 to-brand-black/85"></div>
         </div>
       ))}
@@ -145,28 +135,7 @@ export default function HeroSection() {
         ))}
       </div>
 
-      {/* Navigation Arrows */}
-      <button 
-        onClick={prevSlide}
-        className="absolute left-4 md:left-8 z-30 w-11 h-11 md:w-13 md:h-13 rounded-full bg-black/40 border border-white/20 text-white flex items-center justify-center hover:bg-brand-rosegold hover:border-brand-rosegold transition-all duration-300 backdrop-blur-md group shadow-xl"
-        aria-label="Previous Slide"
-      >
-        <svg className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-
-      <button 
-        onClick={nextSlide}
-        className="absolute right-4 md:right-8 z-30 w-11 h-11 md:w-13 md:h-13 rounded-full bg-black/40 border border-white/20 text-white flex items-center justify-center hover:bg-brand-rosegold hover:border-brand-rosegold transition-all duration-300 backdrop-blur-md group shadow-xl"
-        aria-label="Next Slide"
-      >
-        <svg className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-
-      {/* Slide Indicators / Pagination Dots */}
+      {/* Minimal Slide Indicator Dots at Bottom */}
       <div className="absolute bottom-6 md:bottom-8 z-30 flex items-center gap-3">
         {slides.map((_, idx) => (
           <button
