@@ -8,11 +8,12 @@ import { useWishlist } from '../context/WishlistContext';
 export default function ProductGrid() {
   const [quickViewProductId, setQuickViewProductId] = useState<string | null>(null);
   const [products, setProducts] = useState<Product[]>([]);
-  const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [activeCategory, setActiveCategory] = useState<string>("New Arrivals");
   const [isLoading, setIsLoading] = useState(true);
   const { toggleWishlistProduct, isInWishlist } = useWishlist();
 
   const categories = [
+    "New Arrivals",
     "All",
     "Kurti",
     "Co-ord Sets",
@@ -32,17 +33,21 @@ export default function ProductGrid() {
       });
   }, []);
 
-  const filteredProducts = activeCategory === "All" 
-    ? products 
-    : products.filter((p: any) => {
-        if (activeCategory === "Co-ord Sets") {
-          return p.category === "Co-ord Sets" || p.category === "2 Piece Set";
-        }
-        if (activeCategory === "3 Piece Kurti Set") {
-          return p.category === "3 Piece Kurti Set" || p.category === "3 Piece Set";
-        }
-        return p.category === activeCategory;
-      });
+  const newArrivalsList = products.filter((p: any) => p.is_new_arrival);
+
+  const filteredProducts = activeCategory === "New Arrivals"
+    ? (newArrivalsList.length > 0 ? newArrivalsList : products)
+    : activeCategory === "All" 
+      ? products 
+      : products.filter((p: any) => {
+          if (activeCategory === "Co-ord Sets") {
+            return p.category === "Co-ord Sets" || p.category === "2 Piece Set";
+          }
+          if (activeCategory === "3 Piece Kurti Set") {
+            return p.category === "3 Piece Kurti Set" || p.category === "3 Piece Set";
+          }
+          return p.category === activeCategory;
+        });
 
   return (
     <section id="products" className="py-24 bg-[#0a0a0a] text-white w-full relative z-10">
@@ -50,15 +55,17 @@ export default function ProductGrid() {
         
         {/* Filter / Nav Bar for Products */}
         <div className="flex flex-col mb-12 border-b border-[#333] pb-4">
-          <h2 className="font-serif text-3xl md:text-4xl tracking-wider uppercase mb-6">Collection</h2>
+          <h2 className="font-serif text-3xl md:text-4xl tracking-wider uppercase mb-6 text-brand-ivory">
+            New Arrivals & Catalog
+          </h2>
           <div className="flex gap-6 text-sm font-sans uppercase tracking-widest text-gray-400 overflow-x-auto pb-2 scrollbar-hide whitespace-nowrap">
             {categories.map((category) => (
               <button 
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`pb-1 transition-all ${activeCategory === category ? "text-white border-b-2 border-brand-rosegold" : "hover:text-white"}`}
+                className={`pb-1 transition-all ${activeCategory === category ? "text-brand-rosegold font-bold border-b-2 border-brand-rosegold" : "hover:text-white"}`}
               >
-                {category}
+                {category === "New Arrivals" ? "🔥 New Arrivals" : category}
               </button>
             ))}
           </div>
@@ -78,9 +85,11 @@ export default function ProductGrid() {
               {/* Product Image */}
               <div className="relative aspect-[4/5] overflow-hidden bg-[#1a1a1a]">
                 {/* NEW Badge */}
-                <div className="absolute top-3 left-3 z-10 bg-[#c67d82]/20 text-brand-rosegold text-xs font-bold px-2 py-1 uppercase tracking-widest border border-brand-rosegold/30 rounded-sm">
-                  New
-                </div>
+                {product.is_new_arrival && (
+                  <div className="absolute top-3 left-3 z-10 bg-[#c67d82] text-white text-[10px] font-extrabold px-2.5 py-1 uppercase tracking-widest rounded-sm shadow-md flex items-center gap-1">
+                    <span>🔥 NEW ARRIVAL</span>
+                  </div>
+                )}
 
                 <button 
                   onClick={() => toggleWishlistProduct(product)}

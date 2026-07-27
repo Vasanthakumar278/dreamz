@@ -17,7 +17,8 @@ export default function AdminDashboard() {
     colors: '',
     sizes: '',
     category: 'Kurti',
-    model: ''
+    model: '',
+    is_new_arrival: false
   });
 
   const fetchProducts = async () => {
@@ -126,7 +127,7 @@ export default function AdminDashboard() {
       // Reset form
       setIsEditing(false);
       setUploadStatus('idle');
-      setCurrentProduct({ title: '', price: 0, description: '', image: '', colors: '', sizes: '', category: 'Kurti', model: '' });
+      setCurrentProduct({ title: '', price: 0, description: '', image: '', colors: '', sizes: '', category: 'Kurti', model: '', is_new_arrival: false });
       fetchProducts();
       
       // Reset file input
@@ -144,8 +145,9 @@ export default function AdminDashboard() {
     setIsEditing(true);
     setCurrentProduct({
       ...product,
-      colors: product.colors.join(', '),
-      sizes: product.sizes.join(', ')
+      colors: Array.isArray(product.colors) ? product.colors.join(', ') : product.colors || '',
+      sizes: Array.isArray(product.sizes) ? product.sizes.join(', ') : product.sizes || '',
+      is_new_arrival: Boolean(product.is_new_arrival)
     });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -203,6 +205,20 @@ export default function AdminDashboard() {
                 <label className="block text-xs uppercase tracking-widest text-gray-500 mb-1">Dress Model / Fit (Optional)</label>
                 <input type="text" name="model" placeholder="e.g. A-Line, Straight Fit, Anarkali, Crop Top & Pants" value={currentProduct.model || ''} onChange={handleInputChange} className="w-full bg-[#1a1a1a] border border-[#333] rounded px-3 py-2 focus:border-brand-rosegold outline-none transition-colors" />
                 <p className="text-[10px] text-gray-500 mt-1">Specify dress model style (e.g. Anarkali, Flared, Straight Cut, Peplum Co-ord, etc.)</p>
+              </div>
+
+              <div className="flex items-center gap-3 bg-[#1a1a1a] border border-[#333] rounded p-3 my-1 hover:border-brand-rosegold/50 transition-colors">
+                <input
+                  type="checkbox"
+                  id="is_new_arrival"
+                  name="is_new_arrival"
+                  checked={Boolean(currentProduct.is_new_arrival)}
+                  onChange={(e) => setCurrentProduct((prev: any) => ({ ...prev, is_new_arrival: e.target.checked }))}
+                  className="w-4 h-4 accent-brand-rosegold rounded cursor-pointer"
+                />
+                <label htmlFor="is_new_arrival" className="text-xs uppercase tracking-widest text-brand-ivory cursor-pointer font-bold select-none flex items-center gap-2">
+                  <span>🔥 Feature as New Arrival</span>
+                </label>
               </div>
 
               <div>
@@ -271,7 +287,7 @@ export default function AdminDashboard() {
                 {isEditing && (
                   <button type="button" onClick={() => { 
                     setIsEditing(false); 
-                    setCurrentProduct({ title: '', price: 0, description: '', image: '', imageBase64: '', colors: '', sizes: '', category: 'Kurti' }); 
+                    setCurrentProduct({ title: '', price: 0, description: '', image: '', colors: '', sizes: '', category: 'Kurti', model: '', is_new_arrival: false }); 
                     const fileInput = document.getElementById('imageUpload') as HTMLInputElement;
                     if (fileInput) fileInput.value = '';
                   }} className="px-4 border border-[#444] text-gray-300 hover:border-gray-400 py-3 rounded font-bold uppercase tracking-wider text-sm transition-colors">
@@ -300,7 +316,14 @@ export default function AdminDashboard() {
                   <div key={p.id} className="bg-[#111] border border-[#222] rounded-lg p-4 flex gap-4">
                     <img src={p.image} alt={p.title} className="w-20 h-24 object-cover rounded bg-[#1a1a1a]" />
                     <div className="flex flex-col flex-1">
-                      <h3 className="font-serif text-lg text-white leading-tight mb-1">{p.title}</h3>
+                      <div className="flex justify-between items-start mb-1">
+                        <h3 className="font-serif text-lg text-white leading-tight">{p.title}</h3>
+                        {p.is_new_arrival && (
+                          <span className="bg-[#c67d82]/20 border border-brand-rosegold/40 text-brand-rosegold text-[9px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider whitespace-nowrap ml-1">
+                            🔥 New
+                          </span>
+                        )}
+                      </div>
                       <div className="text-brand-rosegold font-bold text-sm mb-1">
                         ₹{p.price} <span className="text-gray-500 text-xs ml-2 font-normal">({p.category})</span>
                       </div>

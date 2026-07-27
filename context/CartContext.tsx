@@ -10,6 +10,7 @@ export type Product = {
   description: string;
   category?: string;
   model?: string;
+  is_new_arrival?: boolean;
   colors?: string[];
   sizes?: string[];
 };

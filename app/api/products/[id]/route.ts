@@ -18,10 +18,19 @@ export async function PUT(
       ? body.sizes.split(',').map((s: string) => s.trim()).filter(Boolean)
       : body.sizes || [];
 
+    let description = body.description || '';
+    if (body.is_new_arrival) {
+      if (!description.includes('[NEW_ARRIVAL]')) {
+        description = `${description}\n\n[NEW_ARRIVAL]`.trim();
+      }
+    } else {
+      description = description.replace(/\[NEW_ARRIVAL\]/gi, '').trim();
+    }
+
     const updatedProduct = {
       title: body.title,
       price: body.price,
-      description: body.description,
+      description,
       image: body.image || '',
       colors,
       sizes,
@@ -40,7 +49,13 @@ export async function PUT(
       return NextResponse.json({ error: 'Failed to update product' }, { status: 500 });
     }
 
-    return NextResponse.json(data);
+    const responseData = {
+      ...data,
+      is_new_arrival: Boolean(body.is_new_arrival),
+      description: (data.description || '').replace(/\[NEW_ARRIVAL\]/gi, '').trim()
+    };
+
+    return NextResponse.json(responseData);
   } catch (error) {
     console.error(error);
     return NextResponse.json({ error: 'Failed to update product' }, { status: 500 });

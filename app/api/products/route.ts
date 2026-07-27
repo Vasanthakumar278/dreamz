@@ -16,7 +16,17 @@ export async function GET() {
     return NextResponse.json({ error: 'Failed to fetch products', details: error }, { status: 500 });
   }
 
-  return NextResponse.json(data);
+  const processedData = (data || []).map((product: any) => {
+    const isNewArrival = Boolean(product.is_new_arrival || (product.description && product.description.includes('[NEW_ARRIVAL]')));
+    const cleanDescription = product.description ? product.description.replace(/\[NEW_ARRIVAL\]/gi, '').trim() : '';
+    return {
+      ...product,
+      is_new_arrival: isNewArrival,
+      description: cleanDescription
+    };
+  });
+
+  return NextResponse.json(processedData);
 }
 
 // POST /api/products — add a new product
@@ -33,11 +43,20 @@ export async function POST(request: Request) {
       ? body.sizes.split(',').map((s: string) => s.trim()).filter(Boolean)
       : body.sizes || [];
 
-    const newProduct = {
+    let description = body.description || '';
+    if (body.is_new_arrival) {
+      if (!description.includes('[NEW_ARRIVAL]')) {
+        description = `${description}\n\n[NEW_ARRIVAL]`.trim();
+      }
+    } else {
+      description = description.replace(/\[NEW_ARRIVAL\]/gi, '').trim();
+    }
+
+    const newProduct: any = {
       id: productId,
       title: body.title,
       price: body.price,
-      description: body.description,
+      description,
       image: body.image || '',
       colors,
       sizes,
@@ -55,7 +74,13 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Failed to save product' }, { status: 500 });
     }
 
-    return NextResponse.json(data, { status: 201 });
+    const responseData = {
+      ...data,
+      is_new_arrival: Boolean(body.is_new_arrival),
+      description: (data.description || '').replace(/\[NEW_ARRIVAL\]/gi, '').trim()
+    };
+
+    return NextResponse.json(responseData, { status: 201 });
   } catch (error) {
     console.error(error);
     return NextResponse.json({ error: 'Failed to save product' }, { status: 500 });
