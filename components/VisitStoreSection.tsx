@@ -47,8 +47,7 @@ export default function VisitStoreSection() {
                   <div>
                     <h3 className="uppercase tracking-widest text-xs text-brand-rosegold font-bold mb-1">Contact</h3>
                     <p className="font-light text-brand-black/90 leading-relaxed text-sm">
-                      +91 96779 86327<br/>
-                      hello@mayilini.com
+                      +91 96779 86327
                     </p>
                   </div>
                 </div>

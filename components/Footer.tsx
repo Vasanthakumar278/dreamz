@@ -27,7 +27,7 @@ export default function Footer() {
           <ul className="space-y-4 font-sans font-light text-sm text-brand-ivory/85">
             <li><Link href="#collections" className="hover:text-brand-rosegold hover:underline transition-all">Collections</Link></li>
             <li><Link href="#about" className="hover:text-brand-rosegold hover:underline transition-all">About</Link></li>
-            <li><Link href="#gallery" className="hover:text-brand-rosegold hover:underline transition-all">Gallery</Link></li>
+            <li><Link href="#products" className="hover:text-brand-rosegold hover:underline transition-all">Shop All</Link></li>
             <li><Link href="#visit-us" className="hover:text-brand-rosegold hover:underline transition-all">Visit Us</Link></li>
           </ul>
         </div>
@@ -44,7 +44,6 @@ export default function Footer() {
           <h3 className="font-sans uppercase tracking-widest text-xs mb-6 text-brand-rosegold font-bold text-letterpress-light">Contact</h3>
           <ul className="space-y-4 font-sans font-light text-sm text-brand-ivory/85">
             <li>Puducherry, India</li>
-            <li><a href="mailto:hello@mayilini.com" className="hover:text-brand-rosegold hover:underline transition-all">hello@mayilini.com</a></li>
             <li><a href="https://wa.me/9677986327" className="hover:text-brand-rosegold hover:underline transition-all">+91 96779 86327</a></li>
           </ul>
         </div>

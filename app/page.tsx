@@ -3,7 +3,6 @@ import HeroSection from "@/components/HeroSection";
 import CollectionsSection from "@/components/CollectionsSection";
 import ProductGrid from "@/components/ProductGrid";
 import AboutSection from "@/components/AboutSection";
-import GallerySection from "@/components/GallerySection";
 import CustomerExperienceSection from "@/components/CustomerExperienceSection";
 import VisitStoreSection from "@/components/VisitStoreSection";
 import Footer from "@/components/Footer";
@@ -18,7 +17,6 @@ export default function Home() {
       <CollectionsSection />
       <AboutSection />
       <CustomerExperienceSection />
-      <GallerySection />
       <VisitStoreSection />
       <Footer />
       <WhatsAppButton />

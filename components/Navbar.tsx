@@ -37,14 +37,11 @@ export default function Navbar() {
               <Link href="#about" className="px-5 py-2.5 rounded-lg text-xs uppercase tracking-widest text-white font-bold drop-shadow-md transition-all duration-200 hover:text-brand-black hover:bg-rosegold-metallic hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_2px_4px_rgba(0,0,0,0.15)] hover:scale-[1.03]">
                 About
               </Link>
-              <Link href="#gallery" className="px-5 py-2.5 rounded-lg text-xs uppercase tracking-widest text-white font-bold drop-shadow-md transition-all duration-200 hover:text-brand-black hover:bg-rosegold-metallic hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_2px_4px_rgba(0,0,0,0.15)] hover:scale-[1.03]">
-                Gallery
+              <Link href="#products" className="px-5 py-2.5 rounded-lg text-xs uppercase tracking-widest text-white font-bold drop-shadow-md transition-all duration-200 hover:text-brand-black hover:bg-rosegold-metallic hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_2px_4px_rgba(0,0,0,0.15)] hover:scale-[1.03]">
+                New Arrivals
               </Link>
               <Link href="#visit-us" className="px-5 py-2.5 rounded-lg text-xs uppercase tracking-widest text-white font-bold drop-shadow-md transition-all duration-200 hover:text-brand-black hover:bg-rosegold-metallic hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_2px_4px_rgba(0,0,0,0.15)] hover:scale-[1.03]">
                 Visit Store
-              </Link>
-              <Link href="#products" className="px-5 py-2.5 rounded-lg text-xs uppercase tracking-widest text-white font-bold drop-shadow-md transition-all duration-200 hover:text-brand-black hover:bg-rosegold-metallic hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_2px_4px_rgba(0,0,0,0.15)] hover:scale-[1.03]">
-                New Arrivals
               </Link>
             </div>
             <div className="md:hidden flex items-center gap-4">
