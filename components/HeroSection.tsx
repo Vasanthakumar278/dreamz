@@ -6,7 +6,7 @@ export default function HeroSection() {
   const slides = [
     {
       id: 1,
-      image: "/images/cat_3piece.png",
+      image: "/images/cat_3piece.png?v=2",
       tag: "Festive & Occasion Wear",
       title: "3-Piece Kurti\nEnsembles",
       subtitle: "Complete elegant suits featuring detailed kurtis, matching pants, and rich dupattas designed for grand celebrations.",
@@ -17,7 +17,7 @@ export default function HeroSection() {
     },
     {
       id: 2,
-      image: "/images/cat_2piece.png",
+      image: "/images/cat_2piece.png?v=2",
       tag: "Modern Comfort",
       title: "Trendy Matching\nCo-ord Sets",
       subtitle: "Effortless 2-piece co-ord sets crafted for modern comfort, casual chic outings, and stylish daily wear.",
@@ -28,7 +28,7 @@ export default function HeroSection() {
     },
     {
       id: 3,
-      image: "/images/cat_kurti.png",
+      image: "/images/cat_kurti.png?v=2",
       tag: "Everyday Luxury",
       title: "Designer Kurtis &\nHand Embroideries",
       subtitle: "Contemporary cuts blended with traditional hand embroidery, providing modern silhouettes for everyday luxury.",

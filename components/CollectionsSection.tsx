@@ -4,19 +4,19 @@ export default function CollectionsSection() {
       id: 1,
       title: "Designer Kurtis",
       description: "Contemporary cuts blended with traditional hand embroidery, providing modern silhouettes for everyday luxury and workwear.",
-      image: "/images/cat_kurti.png"
+      image: "/images/cat_kurti.png?v=2"
     },
     {
       id: 2,
       title: "Co-ord Sets",
       description: "Trendy, effortless 2-piece matching co-ord sets designed for modern comfort, casual chic outings, and stylish daily wear.",
-      image: "/images/cat_2piece.png"
+      image: "/images/cat_2piece.png?v=2"
     },
     {
       id: 3,
       title: "3-Piece Kurti Sets",
       description: "Complete elegant ensembles including beautifully detailed kurti, matching bottom wear, and dupattas for festive and occasion wear.",
-      image: "/images/cat_3piece.png"
+      image: "/images/cat_3piece.png?v=2"
     }
   ];
 
