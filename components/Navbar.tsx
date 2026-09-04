@@ -10,6 +10,9 @@ export default function Navbar() {
   const { toggleCart, cartCount } = useCart();
   const { toggleWishlistSidebar, wishlistCount } = useWishlist();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <>
@@ -48,6 +51,7 @@ export default function Navbar() {
               <button
                 onClick={() => setIsSearchOpen(true)}
                 className="relative p-2 text-white drop-shadow-md hover:text-brand-rosegold transition-colors"
+                aria-label="Search"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -56,6 +60,7 @@ export default function Navbar() {
               <button
                 onClick={toggleCart}
                 className="relative p-2 text-white drop-shadow-md hover:text-brand-rosegold transition-colors"
+                aria-label="Cart"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
                 {cartCount > 0 && (
@@ -64,8 +69,15 @@ export default function Navbar() {
                   </span>
                 )}
               </button>
-              <button className="px-4 py-2 rounded-lg text-xs uppercase tracking-widest font-bold text-white bg-black/40 shadow-sm border border-white/20 hover:scale-[1.03] active:translate-y-[1px]">
-                Menu
+              <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="px-4 py-2 rounded-lg text-xs uppercase tracking-widest font-bold text-white bg-black/40 shadow-sm border border-white/20 hover:scale-[1.03] active:translate-y-[1px] flex items-center gap-1.5"
+              >
+                {isMobileMenuOpen ? (
+                  <span>Close ✕</span>
+                ) : (
+                  <span>Menu ☰</span>
+                )}
               </button>
             </div>
             <div className="hidden md:flex items-center ml-4 border-l border-white/30 pl-4 gap-6 text-sm uppercase tracking-widest font-sans font-bold">
@@ -104,6 +116,68 @@ export default function Navbar() {
             </div>
           </div>
         </div>
+
+        {/* Mobile Navigation Drawer / Dropdown */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t border-white/10 bg-[#0f0f0f]/95 backdrop-blur-xl rounded-b-2xl px-6 py-6 space-y-4 shadow-2xl animate-in fade-in slide-in-from-top-4 duration-300">
+            <div className="flex flex-col space-y-3">
+              <Link 
+                href="#collections" 
+                onClick={closeMobileMenu}
+                className="px-4 py-3 rounded-xl text-sm uppercase tracking-widest text-white font-bold bg-white/5 hover:bg-brand-rosegold hover:text-white transition-all duration-200 flex items-center justify-between"
+              >
+                <span>Collections</span>
+                <span className="text-xs opacity-60">→</span>
+              </Link>
+              <Link 
+                href="#about" 
+                onClick={closeMobileMenu}
+                className="px-4 py-3 rounded-xl text-sm uppercase tracking-widest text-white font-bold bg-white/5 hover:bg-brand-rosegold hover:text-white transition-all duration-200 flex items-center justify-between"
+              >
+                <span>About</span>
+                <span className="text-xs opacity-60">→</span>
+              </Link>
+              <Link 
+                href="#products" 
+                onClick={closeMobileMenu}
+                className="px-4 py-3 rounded-xl text-sm uppercase tracking-widest text-white font-bold bg-white/5 hover:bg-brand-rosegold hover:text-white transition-all duration-200 flex items-center justify-between"
+              >
+                <span>New Arrivals</span>
+                <span className="text-xs opacity-60">→</span>
+              </Link>
+              <Link 
+                href="#visit-us" 
+                onClick={closeMobileMenu}
+                className="px-4 py-3 rounded-xl text-sm uppercase tracking-widest text-white font-bold bg-white/5 hover:bg-brand-rosegold hover:text-white transition-all duration-200 flex items-center justify-between"
+              >
+                <span>Visit Store</span>
+                <span className="text-xs opacity-60">→</span>
+              </Link>
+            </div>
+
+            <div className="pt-2 border-t border-white/10 flex items-center justify-between gap-3 text-xs uppercase tracking-widest font-bold">
+              <button
+                onClick={() => { closeMobileMenu(); toggleWishlistSidebar(); }}
+                className="flex-1 py-3 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-white flex items-center justify-center gap-2 transition-colors"
+              >
+                <svg className="w-4 h-4 text-brand-rosegold fill-brand-rosegold" viewBox="0 0 24 24">
+                  <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                Wishlist {wishlistCount > 0 && `(${wishlistCount})`}
+              </button>
+
+              <button
+                onClick={() => { closeMobileMenu(); setIsSearchOpen(true); }}
+                className="flex-1 py-3 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-white flex items-center justify-center gap-2 transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                Search
+              </button>
+            </div>
+          </div>
+        )}
       </nav>
 
       <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
