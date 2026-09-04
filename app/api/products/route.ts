@@ -4,29 +4,54 @@ import { supabase } from '@/lib/supabase';
 export const dynamic = 'force-dynamic';
 
 
+import productsFallback from '@/data/products.json';
+
 // GET /api/products — fetch all products
 export async function GET() {
-  const { data, error } = await supabase
-    .from('products')
-    .select('*')
-    .order('created_at', { ascending: false });
+  try {
+    const { data, error } = await supabase
+      .from('products')
+      .select('*')
+      .order('created_at', { ascending: false });
 
-  if (error) {
-    console.error('Supabase error fetching products:', error);
-    return NextResponse.json({ error: 'Failed to fetch products', details: error }, { status: 500 });
+    if (error || !data || data.length === 0) {
+      if (error) console.error('Supabase error fetching products, using local fallback:', error);
+      const processedFallback = (productsFallback || []).map((product: any) => {
+        const isNewArrival = Boolean(product.is_new_arrival || (product.description && product.description.includes('[NEW_ARRIVAL]')));
+        const cleanDescription = product.description ? product.description.replace(/\[NEW_ARRIVAL\]/gi, '').trim() : '';
+        return {
+          ...product,
+          is_new_arrival: isNewArrival,
+          description: cleanDescription
+        };
+      });
+      return NextResponse.json(processedFallback);
+    }
+
+    const processedData = (data || []).map((product: any) => {
+      const isNewArrival = Boolean(product.is_new_arrival || (product.description && product.description.includes('[NEW_ARRIVAL]')));
+      const cleanDescription = product.description ? product.description.replace(/\[NEW_ARRIVAL\]/gi, '').trim() : '';
+      return {
+        ...product,
+        is_new_arrival: isNewArrival,
+        description: cleanDescription
+      };
+    });
+
+    return NextResponse.json(processedData);
+  } catch (err) {
+    console.error('Supabase fetch failed, using local products fallback:', err);
+    const processedFallback = (productsFallback || []).map((product: any) => {
+      const isNewArrival = Boolean(product.is_new_arrival || (product.description && product.description.includes('[NEW_ARRIVAL]')));
+      const cleanDescription = product.description ? product.description.replace(/\[NEW_ARRIVAL\]/gi, '').trim() : '';
+      return {
+        ...product,
+        is_new_arrival: isNewArrival,
+        description: cleanDescription
+      };
+    });
+    return NextResponse.json(processedFallback);
   }
-
-  const processedData = (data || []).map((product: any) => {
-    const isNewArrival = Boolean(product.is_new_arrival || (product.description && product.description.includes('[NEW_ARRIVAL]')));
-    const cleanDescription = product.description ? product.description.replace(/\[NEW_ARRIVAL\]/gi, '').trim() : '';
-    return {
-      ...product,
-      is_new_arrival: isNewArrival,
-      description: cleanDescription
-    };
-  });
-
-  return NextResponse.json(processedData);
 }
 
 // POST /api/products — add a new product

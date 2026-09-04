@@ -24,11 +24,17 @@ export default function ProductGrid() {
     fetch('/api/products')
       .then(res => res.json())
       .then(data => {
-        setProducts(data);
+        if (Array.isArray(data)) {
+          setProducts(data);
+        } else {
+          console.error("Products API returned non-array data:", data);
+          setProducts([]);
+        }
         setIsLoading(false);
       })
       .catch(err => {
         console.error("Failed to load products", err);
+        setProducts([]);
         setIsLoading(false);
       });
   }, []);
