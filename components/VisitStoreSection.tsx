@@ -30,10 +30,9 @@ export default function VisitStoreSection() {
                     <h3 className="uppercase tracking-widest text-xs text-brand-rosegold font-bold mb-1">Location</h3>
                     <p className="font-light text-brand-black/90 leading-relaxed text-sm">
                       Dreamz Fashion Boutique<br/>
-                      162, Nehru Street,<br/>
-                      Near Singapur Silai, Pondicherry Bazaar,<br/>
-                      Puducherry 605001<br/>
-                      India
+                      162, Jawaharlal Nehru St,<br/>
+                      Next to Singapoor Steel House, MG Road Area,<br/>
+                      Puducherry 605001, India
                     </p>
                   </div>
                   
@@ -70,7 +69,7 @@ export default function VisitStoreSection() {
           <div className="w-full lg:w-2/3 h-96 lg:h-auto min-h-[400px] p-2 bg-[#1c0f0a] frame-gold shadow-2xl relative overflow-hidden transition-transform duration-500 hover:scale-[1.01]">
             <div className="absolute inset-2 shadow-[inset_0_4px_10px_rgba(0,0,0,0.6)] pointer-events-none z-10"></div>
             <iframe 
-              src="https://maps.google.com/maps?q=Dreamz,+Puducherry&t=&z=17&ie=UTF8&iwloc=&output=embed" 
+              src="https://maps.google.com/maps?q=162+Jawaharlal+Nehru+St+Puducherry+605001&t=&z=17&ie=UTF8&iwloc=&output=embed" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
